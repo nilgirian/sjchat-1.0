@@ -1,0 +1,78 @@
+What is SJChat (Simple Java Chat)?
+
+SJChat is an example of a Java applet web chat.  I intend it to be a
+starter-kit for coders who want to create thier own chat and program in thier
+own features.  SJChat works in two programs: The Server and Client.  The
+Server is the C code in the './src' directory, and the client is the Java
+code in the './WWW/Applet.dir' directory.  I'll leave it to you to decipher
+the source.
+
+
+How does it work?
+
+You load the './WWW/index.html', web page, and if you're lucky the applet
+will start up a web chat. :)  You'll need Java (JDK 1.0.2 or better).
+
+
+How do I get started?
+
+1. 'cd' into the './src' directory and type 'make'.
+2. Likewise, 'cd' into the './WWW/Applet.dir' directory and type 'make'.
+3. If you've gotten this far without any problems, then you'll need to make a
+   decision on how you're going to make the './WWW' accessable from the web.
+   From the sjchat directory you can do something like:
+
+		mv WWW ~/www/mychat
+
+   (assuming '~/www' is your web directory)
+
+   or 'cd' into your web directory and do something like:
+
+   		ln -s ~/where/ever/sjchat/WWW mychat
+
+   Basically, what you want to do is keep the directory heirarchy the way that
+   it is in the the './WWW' directory. So you can move 'Applet.dir' and
+   'Library.dir' into your web directory, and copy 'index.html' into your
+   web directory as 'mychat.html'.
+
+4. Start the server.  The server needs to be running in order for the Java
+   applet client to work.  For those of you running csh try:
+
+   		./sjchatd >>& /dev/null &
+
+   or those using bash try:
+
+		./sjchatd >> /dev/null 2>&1 &
+
+   You can replace /dev/null with a filename and system messages will be
+   written out to that file.
+
+5. With the server up and running and the Java classes, and 'index.html'
+   available from the web you should be able to load the 'index.html' file
+   with a Java capable web browser and see the web chat.
+
+
+Why JDK 1.0?
+
+Because not everyone on the web is using the latest and greatest version.
+
+
+Will I add more to this?
+
+Probably not.  If I do add more, it will be something basic, or maybe an
+improvement of the documentation :). The key here is "Simple".  This chat
+is here for you to RYO web chat.  There are a lot of possibilities from where
+this code stands right now.  It is up to a few brave souls who believe in the
+CopyLeft policy to come up with something better.
+
+
+
+
+
+If you do end up making a bigger and better web chat from SJChat, or you
+are using it as is.. I'd like to know :)
+
+If anyone has any questions, find a bug, or want to state a comment, 
+feel free to e-mail me:
+
+silk@exodus.mit.edu
